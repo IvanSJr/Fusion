@@ -21,6 +21,13 @@ media
 .idea/**/uiDesigner.xml
 .idea/**/gradle.xml
 .idea/**/libraries
+/.idea/.gitignore
+/.idea/FusionDjango.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
 *.iws /out/
 
 # Python #
@@ -98,10 +105,4 @@ Control.ca-list
 Control.ca-bundle
 Control.system-ca-bundle
 GitHub.sublime-settings
-/.idea/.gitignore
-/.idea/FusionDjango.iml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/inspectionProfiles/Project_Default.xml
-/.idea/vcs.xml
+
