@@ -7,7 +7,7 @@ from stdimage.models import StdImageField
 
 class Base(models.Model):
     criados = models.DateField('Criação', auto_now_add=True)
-    modificado = models.DataField('Atualização', auto_now=True)
+    modificado = models.DateField('Atualização', auto_now=True)
     ativo = models.BooleanField('Ativo?', default=True)
 
     class Meta:
@@ -31,7 +31,7 @@ class Servico(Base):
 
     class Meta:
         verbose_name = 'Serviço'
-        verbose_plural = 'Serviços'
+        verbose_name_plural = 'Serviços'
 
     def __str__(self):
         return self.servico
@@ -42,7 +42,7 @@ class Cargo(Base):
 
     class Meta:
         verbose_name = 'Cargo'
-        verbose_plural = 'Cargos'
+        verbose_name_plural = 'Cargos'
 
     def __str__(self):
         return self.cargo
@@ -59,7 +59,7 @@ class Funcionario(Base):
 
     class Meta:
         verbose_name = 'funcionário'
-        verbose_plural = 'funcionários'
+        verbose_name_plural = 'funcionários'
 
     def __str__(self):
         return self.nome
