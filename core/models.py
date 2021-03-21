@@ -6,8 +6,8 @@ from stdimage.models import StdImageField
 
 
 class Base(models.Model):
-    criados = models.DateTimeField('Criação', auto_now_add=True)
-    modificado = models.DataTimeField('Atualização', auto_now=True)
+    criados = models.DateField('Criação', auto_now_add=True)
+    modificado = models.DataField('Atualização', auto_now=True)
     ativo = models.BooleanField('Ativo?', default=True)
 
     class Meta:
