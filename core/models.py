@@ -1,8 +1,12 @@
 from django.db import models
 from stdimage.models import StdImageField
+import uuid
 
 
-# Create your models here.
+def get_file_path(_instacia, arquivo):
+    ext = arquivo.split('.')[-1]
+    arquivo = f'{uuid.uuid4()}.{ext}'
+    return arquivo
 
 
 class Base(models.Model):
@@ -17,6 +21,7 @@ class Base(models.Model):
 class Servico(Base):
     # Opções de icones
     icone_choices = (
+        # Banco         Usuario
         ('lni-cog', 'Engrenagem'),
         ('lni-stats-up', 'Gráfico'),
         ('lni-users', 'Usuários'),
@@ -52,7 +57,7 @@ class Funcionario(Base):
     nome = models.CharField('Nome', max_length=45)
     cargo = models.ForeignKey('core.Cargo', verbose_name='Cargo', on_delete=models.CASCADE)  # chave estrangueira de Cargo
     bio = models.TextField('Biografia', max_length=300)
-    imagem = StdImageField('Imagem', upload_to='equipe', variations={'thumb': {'width': 480, 'height': 480, 'crop': True}})
+    imagem = StdImageField('Imagem', upload_to=get_file_path, variations={'thumb': {'width': 480, 'height': 480, 'crop': True}})
     facebook = models.CharField('Facebook', max_length=100, default='#')
     twitter = models.CharField('Twitter', max_length=100, default='#')
     instragram = models.CharField('Instagram', max_length=100, default='#')
