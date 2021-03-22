@@ -11,7 +11,7 @@ class IndexView(TemplateView):
         context['servicos'] = Servico.objects.order_by('?').all()
         context['funcionarios'] = Funcionario.objects.order_by('?').all()
         recursos = Recurso.objects.order_by('?').all()  # retorna objetos em ordem aleatoria e armazena na variável
-        c = recursos.count()  # retorna a quantidade views
+        c = recursos.count()  # retorna a quantidade de objetos
         context["recursos1"] = recursos[:c//2]  # lado esquerdo do layout
         context["recursos2"] = recursos[c//2:c]  # lado direito do layout
         return context
